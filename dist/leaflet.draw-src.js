@@ -157,7 +157,7 @@ L.Draw.Feature = L.Handler.extend({
 
 			map.getContainer().focus();
 
-			this._tooltip = new L.Tooltip(this._map);
+			this._tooltip = new L.Draw.Tooltip(this._map);
 
 			L.DomEvent.on(this._container, 'keyup', this._cancelDrawing, this);
 		}
@@ -2929,7 +2929,7 @@ L.Toolbar = L.Class.extend({
 });
 
 
-L.Tooltip = L.Class.extend({
+L.Draw.Tooltip = L.Class.extend({
 	initialize: function (map) {
 		this._map = map;
 		this._popupPane = map._panes.popupPane;
@@ -3323,7 +3323,7 @@ L.EditToolbar.Edit = L.Handler.extend({
 
 			this._featureGroup.eachLayer(this._enableLayerEdit, this);
 
-			this._tooltip = new L.Tooltip(this._map);
+			this._tooltip = new L.Draw.Tooltip(this._map);
 			this._tooltip.updateContent({
 				text: L.drawLocal.edit.handlers.edit.tooltip.text,
 				subtext: L.drawLocal.edit.handlers.edit.tooltip.subtext

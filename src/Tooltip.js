@@ -1,4 +1,4 @@
-L.Tooltip = L.Class.extend({
+L.Draw.Tooltip = L.Class.extend({
 	initialize: function (map) {
 		this._map = map;
 		this._popupPane = map._panes.popupPane;
